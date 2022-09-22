@@ -13,7 +13,7 @@ pipeline {
                 branch 'master'
             }
             steps {
-                withCredentials([sshUserPrivateKey(credentialsId: "Login_Cloud_Server", , usernameVariable: 'USERNAME')]) {
+                withCredentials([sshUserPrivateKey(credentialsId: "Login_Cloud_Server", , usernameVariable: 'USERNAME', keyFileVariable: 'keyfile')]) {
                     sshPublisher(
                         failOnError: true,
                         continueOnError: false,
