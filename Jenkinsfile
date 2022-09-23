@@ -12,7 +12,7 @@ pipeline {
             when {
                 branch 'master'
             }
-            steps {
+            steps { [usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) 
                         failOnError: true,
                         continueOnError: false,
                         publishers: [
